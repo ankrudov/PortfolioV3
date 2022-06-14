@@ -1,0 +1,30 @@
+//dotenv variables
+require('dotenv').config()
+const dbUrl = process.env.DATABASE_URL;
+//used to configure server
+const express = require('express');
+
+const app= express();
+//importing routes 
+const routes = require('./routes/routes');
+const about = require('./routes/about');
+const PORT = 5000;
+//allows for usage of mongoose to connect to mongoDB
+const mongoose = require('mongoose');
+const database = mongoose.connection
+
+app.use(express.json());
+//route handling
+app.use('/api',routes);
+app.use('/api',about);
+
+//this is the connection to mongoDB containing project info
+mongoose.connect(dbUrl).
+    catch((err)=> console.log(err));
+database.on('error',(error) => console.error(error));
+database.once('open',() => console.log('connected to database'));
+
+
+
+app.listen(PORT, ()=> console.log(`server running on port ${PORT}`));
+
