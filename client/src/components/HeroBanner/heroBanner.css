@@ -1,0 +1,97 @@
+.hero-container{
+    display: flex;
+    flex-direction: column-reverse;
+    position: relative;
+    height: 30em;
+}
+.intro-container{
+    background-color: antiquewhite;
+    height: fit-content;
+    width: 80%;
+    position: absolute;
+    padding: 1.5em;
+    padding-left: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    bottom: -6em;
+    border: 1px solid;
+    box-shadow: 5px 10px;
+}
+.intro-container h2{
+  color: rgba(225,225,225, .1);
+  background-image: url("../../assets/coding.jpg");
+  background-repeat: repeat-x;
+  background-position: bottom;
+  background-size: contain;
+  -webkit-background-clip:text;
+  animation: animate 15s linear infinite;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+  @keyframes animate {
+    0%{
+      background-position: left 0px top 10px;
+    }
+    40%{
+      background-position: left 800px top 10px;
+  }
+}
+.intro-container span{
+    color: black;
+    font-weight: 600;
+}
+.intro-container a{
+    text-decoration: none;
+    cursor: pointer;
+    color: salmon;
+    font-size: large;
+}
+.image-container{
+    height: 100%;
+}
+.image-container img{
+    height: 100%;
+    width: 100%;
+    image-rendering: pixelated;
+}
+
+
+/* mobile and tablet views */
+@media only screen and (min-width: 280px) and (max-width: 800px){
+    .hero-container{
+        height: 23em;
+    } 
+}
+@media only screen and (min-width: 801px) and (max-width: 1024px){
+    .intro-container h2{
+        font-size: calc(35px + (45 - 35) * ((100vw - 801px) / (1024 - 801)));
+    }
+    .intro-container span{
+        font-size: calc(21px + (25 - 21) * ((100vw - 801px) / (1024 - 801)));
+    }
+    .intro-container a{
+        font-size: calc(21px + (25 - 21) * ((100vw - 801px) / (1024 - 801)));
+    }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1600px){
+    .intro-container{
+        padding-top: 3em;
+        padding-bottom: 3em;
+        padding-left: 4em;
+        box-shadow: 13px 16px;
+    }
+    .intro-container h2{
+        font-size: calc(35px + (45 - 35) * ((100vw - 1025px) / (1600 - 1025)));
+    }
+    .intro-container span{
+        font-size: calc(20px + (25 - 20) * ((100vw - 1025px) / (1600 - 1025)));
+    }
+    .intro-container a{
+    font-size: calc(20px + (25 - 20) * ((100vw - 1025px) / (1600 - 1025)));
+    }
+
+}
