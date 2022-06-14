@@ -4,11 +4,11 @@ const AboutComponent = (props)=>{
     return(
         <div className='about-container'>
             <div className='image-container'>
-                <img />
+                <img src='#'/>
             </div>
             <div className='text-container'>
                 <span className='title'>{props.title}</span>
-                <span className='body-copy'>{props.bodyCopy}</span>
+                <span className='body-copy'>{props.bodyText}</span>
             </div>
         </div>
     )
