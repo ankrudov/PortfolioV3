@@ -3,7 +3,7 @@ require('dotenv').config()
 const dbUrl = process.env.DATABASE_URL;
 //used to configure server
 const express = require('express');
-
+const cors = require('cors');
 const app= express();
 //importing routes 
 const routes = require('./routes/routes');
@@ -14,9 +14,14 @@ const mongoose = require('mongoose');
 const database = mongoose.connection
 
 app.use(express.json());
+app.use(
+    cors({
+        origin: process.env.CLIENT_URL
+    }));
 //route handling
 app.use('/api',routes);
 app.use('/api',about);
+
 
 //this is the connection to mongoDB containing project info
 mongoose.connect(dbUrl).
