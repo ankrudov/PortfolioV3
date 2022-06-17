@@ -1,14 +1,15 @@
 import React from 'react';
+import './aboutComponent.css';
 
-const AboutComponent = (props)=>{
+const AboutComponent = ({title,bodyText,language})=>{
     return(
         <div className='about-container'>
             <div className='image-container'>
                 <img src='#'/>
             </div>
             <div className='text-container'>
-                <span className='title'>{props.title}</span>
-                <span className='body-copy'>{props.bodyText}</span>
+                <span className='title'>{title}</span>
+                <span className='body-copy'>{bodyText}</span>
             </div>
         </div>
     )
