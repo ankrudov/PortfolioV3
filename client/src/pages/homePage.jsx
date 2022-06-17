@@ -7,9 +7,15 @@ const HomePage = ()=>{
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     useEffect(()=>{
-        fetch("http://localhost:5000/api/about")
-        .then((response)=> console.log(response.json))
+        fetch("http://localhost:5000/api/about",{
+            method:"GET"
+        })
+        .then((response)=> {
+            return response.json()
+        })
+        .then((data)=>console.log(data))
     },[])
+    
     return(
         <>
             <HeroBanner/>
