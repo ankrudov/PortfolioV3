@@ -22,7 +22,6 @@ const HomePage = ()=>{
         .then((data)=>{
             setResponseData(data)
             setError(null)
-            console.log(data.map((d)=>d.title))
         })
         .catch((error)=> {
             setError(error.message)
@@ -37,6 +36,7 @@ const HomePage = ()=>{
     return(
         <>
             <HeroBanner/>
+            {/* TODO: create a loading info component and error component */}
             {loading && <div>Loading About info..</div>}
             {error && <div> {`there was an error retrieving data ${error}`}</div>}
             {responseData && responseData.map((data)=>
