@@ -1,14 +1,16 @@
 import React from 'react';
 import codingImage from '../../assets/software.jpg';
+import { useSelector} from 'react-redux';
 import './heroBanner.css';
 
 const HeroBanner =()=>{
+    const isEnglish = useSelector((state)=>state.language.isEnglish);
     return(
         <div className='hero-container'>
             <div className='intro-container' id='the-beauty'>
-                <h2>Hello!</h2>
-                <span>Im <a href='https://www.linkedin.com/in/andre-vasquez-20221/'>Andre Vasquez</a> a software engineer<br/>
-                Specialzing in Frontend and Mobile development using React!</span>
+                <h2>{isEnglish ? 'Hello!' : 'Holla!'}</h2>
+                <span>{isEnglish ?'Im Andre Vasquez a software engineer.' : 'Soy Andre Vasquez, ingeniero de software.'}<br/>
+                {isEnglish? 'Specialzing in Frontend and Mobile development using React!':'¡Especializado en desarrollo Frontend y Mobile usando React!'}</span>
             </div>
             <div className='image-container'>
                 <img src={codingImage} alt='person coding'/>

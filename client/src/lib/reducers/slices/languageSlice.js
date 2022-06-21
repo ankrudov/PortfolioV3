@@ -9,9 +9,11 @@ const languageSlice = createSlice({
     reducers:{
         setIsEnglish: (state,action) =>{
             state.isEnglish = action.payload;
+            state.isSpanish = false;
         },
         setIsSpanish: (state,action) =>{
             state.isSpanish = action.payload;
+            state.isEnglish = false;
         }
     }
 });
