@@ -1,0 +1,18 @@
+.about-container{
+    height: fit-content;  
+    margin-top: 10em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    margin-bottom: 1em;
+    box-shadow: 1px 1px 6px;
+}
+
+.text-container{
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+}
+
+.title{
+    font-size: larger;
+}
