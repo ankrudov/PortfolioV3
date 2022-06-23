@@ -1,11 +1,11 @@
 import React from 'react';
 import './aboutComponent.css';
-
+import andreFace from '../../assets/andreFace.jfif'
 const AboutComponent = ({title,bodyText,language})=>{
     return(
         <div className='about-container'>
             <div className='image-container'>
-                <img src='#'/>
+                <img src={andreFace} alt="andre vasquez face"/>
             </div>
             <div className='text-container'>
                 <span className='title'>{title}</span>

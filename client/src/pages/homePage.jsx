@@ -1,13 +1,18 @@
 import React, {useState, useEffect} from 'react';
 import HeroBanner from '../components/HeroBanner/heroBanner';
 import AboutComponent from '../components/AboutComponent/aboutComponent';
+import { useSelector} from 'react-redux';
 
 const HomePage = ()=>{
-    const [responseData, setResponseData ] = useState(null);
+    const [response,setResponse] = useState(null);
+    const [englishData, setEnglishData ] = useState(null);
+    const [spanishData, setSpanishData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const isEnglish = useSelector((state)=>state.language.isEnglish);
     useEffect(()=>{
         const fetchData = async () =>{
+            setLoading(true);
             await fetch("http://localhost:5000/api/about",{
             method:"GET"
         })
@@ -20,18 +25,37 @@ const HomePage = ()=>{
             return response.json()
         })
         .then((data)=>{
-            setResponseData(data)
+            setResponse(data);
             setError(null)
         })
         .catch((error)=> {
             setError(error.message)
-            setResponseData(null)
+            setLoading(false)
         })
-        .finally(()=> setLoading(false))
+        .finally(()=> setLoading(true))
         }
         fetchData()
-        
     },[])
+    useEffect(()=>{
+        setLoading(true)
+        const updateLanguage = async ()=>{
+            if(await response){
+                for(let i = 0; i < response.length;i++){
+                    try{
+                        if(response[i].language === 'english'){ 
+                            setEnglishData(response[i])
+                        }else{
+                            setSpanishData(response[i])
+                        }
+                    }
+                    catch(error){
+                        console.log(error)
+                    }  
+                }
+            }   setLoading(false)
+        }
+        updateLanguage()
+    },[response])
     
     return(
         <>
@@ -39,14 +63,8 @@ const HomePage = ()=>{
             {/* TODO: create a loading info component and error component */}
             {loading && <div>Loading About info..</div>}
             {error && <div> {`there was an error retrieving data ${error}`}</div>}
-            {responseData && responseData.map((data)=>
-                <AboutComponent
-                    id={data.id}
-                    title={data.title}
-                    bodyText={data.bodyText}
-                />
-                )
-            }
+            {!loading && englishData && isEnglish && <AboutComponent title={englishData.title} bodyText={englishData.bodyText}/>}
+            {!loading && spanishData && !isEnglish && <AboutComponent title={spanishData.title} bodyText={spanishData.bodyText}/>}
         </>
     )
 };
