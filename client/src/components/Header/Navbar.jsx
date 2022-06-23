@@ -29,7 +29,6 @@ const ResponsiveAppBar = () => {
         <NavDropdown title={isEnglish ? 'Change Language':'Cambiar Idioma'} id="basic-nav-dropdown">
           <NavDropdown.Item href="#" onClick={()=>dispatch(setIsEnglish(true))}>{isEnglish ? 'English' : 'Ingles'}</NavDropdown.Item>
           <NavDropdown.Item href="#" onClick={()=>dispatch(setIsSpanish(true))}>{isEnglish ? 'Spanish' : 'Espanol'}</NavDropdown.Item>
-          <NavDropdown.Item href="#" onClick={()=>console.log(isEnglish,isSpanish)}>Show State</NavDropdown.Item>
         </NavDropdown>
       </Navbar.Collapse>
     </Container>
