@@ -1,7 +1,7 @@
 import React from 'react';
 import './aboutComponent.css';
 import andreFace from '../../assets/andreFace.jfif'
-const AboutComponent = ({title,bodyText,language})=>{
+const AboutComponent = ({title,bodyText})=>{
     return(
         <div className='about-container'>
             <div className='image-container'>
