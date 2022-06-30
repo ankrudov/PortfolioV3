@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import HeroBanner from '../components/HeroBanner/heroBanner';
 import AboutComponent from '../components/AboutComponent/aboutComponent';
+import ErrorComponent from '../components/ErrorComponent/errorComponent';
 import { useSelector} from 'react-redux';
+import './homePage.css';
 
 const HomePage = ()=>{
     const [response,setResponse] = useState(null);
@@ -61,8 +63,8 @@ const HomePage = ()=>{
         <>
             <HeroBanner/>
             {/* TODO: create a loading info component and error component */}
-            {loading && <div>Loading About info..</div>}
-            {error && <div> {`there was an error retrieving data ${error}`}</div>}
+            {loading && error && <ErrorComponent error={error}/>}
+            {/* {error && <div> {`there was an error retrieving data ${error}`}</div>} */}
             {!loading && englishData && isEnglish && <AboutComponent title={englishData.title} bodyText={englishData.bodyText}/>}
             {!loading && spanishData && !isEnglish && <AboutComponent title={spanishData.title} bodyText={spanishData.bodyText}/>}
         </>

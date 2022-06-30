@@ -1,0 +1,23 @@
+.error-container{
+    height: fit-content;
+    margin-top: 10em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-container p{
+    padding: 1em;
+}
+
+.error-image-container{
+    height: 10em;
+}
+
+.error-image-container img{
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+
+}

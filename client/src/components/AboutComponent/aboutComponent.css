@@ -51,6 +51,7 @@
 @media only screen and (min-width: 801px) and (max-width: 1700px){
     .about-container{
         align-items: center;
+        margin-top: 11.5em;
     }
     .title{
         font-size: calc(22px + (26 - 22) * ((100vw - 801px) / (1700 - 801)));
