@@ -5,7 +5,7 @@
     height: 30em;
 }
 .intro-container{
-    background-color: antiquewhite;
+    background: linear-gradient(antiquewhite,white);
     height: fit-content;
     width: 80%;
     position: absolute;
