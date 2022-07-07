@@ -1,14 +1,27 @@
-.about-container{
+.skill-container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     height: fit-content;  
-    margin-top: 10em;
+    margin-top: 6em;
     margin-left: 0.5em;
     margin-right: 0.5em;
     margin-bottom: 1em;
     background: linear-gradient(white,antiquewhite);
 }
-
+.icon-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.icon-container div{
+    display: flex;
+    flex-direction: column;
+    padding-left: 1em;
+    padding-right: 2em;
+}
+.icon-container span{
+    font-size: larger;
+}
 .text-container{
     height: fit-content;
     display: flex;
@@ -26,31 +39,61 @@
     font-weight: 400;
 }
 
-.about-container .image-container{
+.skill-container .image-container{
     height: 100%;
-    padding: 3em;
-    
+    width: 100%;
+    padding-bottom: 3em;  
 }
-.about-container .image-container img{
+.skill-container .image-container img{
     border-radius: 50%;
     box-shadow: 0px 2px 5px;
 }
+.image-container{
+    text-align: center;
+}
+.image-container h3{
+    padding-bottom: 2em;
+}
+.icon{
+    font-size: x-large;
+}
 @media only screen and (min-width: 280px) and (max-width: 580px){
-    .about-container{
+    .skill-container{
         flex-direction: column;
+    }
+    .skill-container .image-container{
+        padding-bottom: 2em;
+        padding-top: 1em;
+    }
+    .image-container h3{
+        padding-bottom: .5em;
+    }
+    .icon-container{
+        flex-direction:column;
+        
+    }
+    .icon-container div{
+        flex-direction: row;
+    }
+    .icon-container span{
+        padding-left: .5em;
     }
     
 }
 @media only screen and (min-width: 581px) and (max-width: 800px){
-    .about-container{
+    .skill-container{
         align-items: center;
     }
 }
 
 @media only screen and (min-width: 801px) and (max-width: 1700px){
-    .about-container{
+    .skill-container{
         align-items: center;
         margin-top: 11.5em;
+        padding: 3em;
+    }
+    .icon-container{
+        justify-content: center;
     }
     .title{
         font-size: calc(22px + (26 - 22) * ((100vw - 801px) / (1700 - 801)));
