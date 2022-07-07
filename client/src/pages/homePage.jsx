@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import HeroBanner from '../components/HeroBanner/heroBanner';
 import AboutComponent from '../components/AboutComponent/aboutComponent';
+import SkillComponent from '../components/SkillComponent/skillComponent';
 import ErrorComponent from '../components/ErrorComponent/errorComponent';
 import { useSelector} from 'react-redux';
 import './homePage.css';
@@ -67,6 +68,7 @@ const HomePage = ()=>{
             {/* {error && <div> {`there was an error retrieving data ${error}`}</div>} */}
             {!loading && englishData && isEnglish && <AboutComponent title={englishData.title} bodyText={englishData.bodyText}/>}
             {!loading && spanishData && !isEnglish && <AboutComponent title={spanishData.title} bodyText={spanishData.bodyText}/>}
+            <SkillComponent/>
         </>
     )
 };
