@@ -63,6 +63,12 @@
     .hero-container{
         height: 23em;
     } 
+
+    @media only screen and (min-width: 280px) and (max-width: 600px){
+        .intro-container{
+            width: 95%;
+        }
+    }
 }
 @media only screen and (min-width: 801px) and (max-width: 1024px){
     .intro-container h2{

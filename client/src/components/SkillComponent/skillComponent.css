@@ -20,7 +20,7 @@
     padding-right: 2em;
 }
 .icon-container span{
-    font-size: larger;
+    font-size: medium;
 }
 .text-container{
     height: fit-content;
@@ -52,10 +52,11 @@
     text-align: center;
 }
 .image-container h3{
+    font-size: larger;
     padding-bottom: 2em;
 }
 .icon{
-    font-size: x-large;
+    font-size: xx-large;
 }
 @media only screen and (min-width: 280px) and (max-width: 580px){
     .skill-container{
@@ -78,6 +79,9 @@
     .icon-container span{
         padding-left: .5em;
     }
+    .icon{
+        font-size: x-large;
+    }
     
 }
 @media only screen and (min-width: 581px) and (max-width: 800px){
@@ -89,13 +93,16 @@
 @media only screen and (min-width: 801px) and (max-width: 1700px){
     .skill-container{
         align-items: center;
-        margin-top: 11.5em;
+        margin-top: 6.5em;
         padding: 3em;
     }
     .icon-container{
         justify-content: center;
     }
-    .title{
+    .icon-container span{
+        font-size: calc(17px + (20 - 17) * ((100vw - 801px) / (1700 - 801)));;
+    }
+    .image-container h3{
         font-size: calc(22px + (26 - 22) * ((100vw - 801px) / (1700 - 801)));
     }
     .body-copy{
