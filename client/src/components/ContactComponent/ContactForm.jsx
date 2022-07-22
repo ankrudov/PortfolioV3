@@ -4,25 +4,31 @@ import './ContactForm.css';
 
 function ContactForm(){
     const [status, setStatus] = useState('Submit');
+    const [buttonDisabled, setButtonDisabled] = useState(false);
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setStatus("Sending...");
         const { name, email, message } = e.target.elements;
-        let details = {
-          name: name.value,
-          email: email.value,
-          message: message.value,
-        };
-        let response = await fetch("http://localhost:5000/api/contact", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json;charset=utf-8",
-          },
-          body: JSON.stringify(details),
-        });
-        setStatus("Submit");
-        let result = await response.json();
-        alert(result.status);
+        try{
+            let details = {
+              name: name.value,
+              email: email.value,
+              message: message.value,
+            };
+            let response = await fetch("http://localhost:5000/api/contact", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json;charset=utf-8",
+              },
+              body: JSON.stringify(details),
+            });
+            let result = await response.json();
+            setStatus(result.status+'!');
+            setButtonDisabled(true);
+        }catch(error){
+          console.log(error.message)
+        }
       };
 
     return(
@@ -53,7 +59,7 @@ function ContactForm(){
                     <textarea className="" name="message" required></textarea>
                     <label htmlFor='message'>Message:</label>
                     </div>
-                    <button type='submit' className="submit-btn">{status}</button>  
+                    <button type='submit' className={buttonDisabled ? 'submit-btn disabled' :'submit-btn'} disabled={buttonDisabled}>{status}</button>  
                 </form>
                 </div>
             </div>

@@ -68,8 +68,7 @@
   }
 }
 
-h2 {
-  font-family: 'Arimo', sans-serif;
+.contact-box h2 {
   color: #fff;
   font-size: clamp(30px, 6vw, 60px);
   letter-spacing: 2px;
@@ -174,14 +173,19 @@ textarea:valid+label {
   filter: sepia(0.5);
 }
 
+.disabled{
+  background-color: rgb(186, 184, 184);
+  cursor:not-allowed;
+}
+
 @media only screen and (max-width: 800px) {
-  h2 {
+  .contact-box h2 {
     font-size: clamp(40px, 10vw, 60px);
   }
 }
 
 @media only screen and (max-width: 400px) {
-  h2 {
+  .contact-box h2 {
     font-size: clamp(30px, 12vw, 60px);
   }
   
