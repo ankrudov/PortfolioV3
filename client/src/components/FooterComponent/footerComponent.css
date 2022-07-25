@@ -78,7 +78,7 @@ img {
     max-width: 210px;
 }
 
-section, footer {
+.footer-container, footer {
     background-color: rgb(30, 30, 30);
     color: white;
 }
