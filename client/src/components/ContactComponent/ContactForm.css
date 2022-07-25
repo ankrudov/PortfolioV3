@@ -24,21 +24,7 @@
 
 
 .contact-links {
-  background-color: #1f2e43;
-  background:
-    radial-gradient(
-      circle at 55% 92%, #426691 0 12%, transparent 12.2%
-    ), 
-    radial-gradient(
-      circle at 94% 72%, #426691 0 10%, transparent 10.2%
-    ), 
-    radial-gradient(
-      circle at 20% max(78%, 350px), #263a53 0 7%, transparent 7.2%
-    ), 
-    radial-gradient(
-      circle at 0% 0%, #263a53 0 40%, transparent 40.2%
-    ), 
-    #1f2e43;
+  background: linear-gradient(white,antiquewhite);
   border-radius: 10px 0 0 10px;
 }
 
@@ -69,11 +55,12 @@
 }
 
 .contact-box h2 {
-  color: #fff;
+  color: rgb(0, 0, 0);
   font-size: clamp(30px, 6vw, 60px);
   letter-spacing: 2px;
   text-align: center;
   transform: scale(.95, 1);
+  text-shadow: antiquewhite 1px 1px 3px;
 }
 
 .links {
