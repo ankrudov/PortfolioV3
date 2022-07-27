@@ -4,7 +4,7 @@ import AboutComponent from '../components/AboutComponent/aboutComponent';
 import SkillComponent from '../components/SkillComponent/skillComponent';
 import ErrorComponent from '../components/ErrorComponent/errorComponent';
 import { useSelector} from 'react-redux';
-import './homePage.css';
+
 
 const HomePage = ()=>{
     const [response,setResponse] = useState(null);

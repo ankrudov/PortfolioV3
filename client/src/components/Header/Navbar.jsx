@@ -27,7 +27,8 @@ const ResponsiveAppBar = () => {
           <Container>
               <Nav className="me-auto">
               <Nav.Link as={Link} to='/'>{isEnglish ? 'Home' : 'Hogar' }</Nav.Link>
-              <Nav.Link as={Link} to='/case-studies'>{isEnglish ? 'Case Studies' : 'estudios de caso' }</Nav.Link>
+              <Nav.Link as={Link} to='/experience'>{isEnglish ? 'experience' : 'experencia' }</Nav.Link>
+              <Nav.Link as={Link} to='/projects'>{isEnglish ? 'Projects' : 'Proyectos' }</Nav.Link>
               <Nav.Link as={Link} to='/contact'>{isEnglish ? 'Contact Me': 'Contáctame'}</Nav.Link>
               </Nav>
           </Container>
