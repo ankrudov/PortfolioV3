@@ -63,9 +63,7 @@ const HomePage = ()=>{
     return(
         <>
             <HeroBanner/>
-            {/* TODO: create a loading info component and error component */}
             {loading && error && <ErrorComponent error={error}/>}
-            {/* {error && <div> {`there was an error retrieving data ${error}`}</div>} */}
             {!loading && englishData && isEnglish && <AboutComponent title={englishData.title} bodyText={englishData.bodyText}/>}
             {!loading && spanishData && !isEnglish && <AboutComponent title={spanishData.title} bodyText={spanishData.bodyText}/>}
             <SkillComponent/>
